@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <item
+        android:id="@+id/allContactsFragment"
+        android:icon="@drawable/ic_contact_phone"
+        android:title="@string/all_contacts"
+        android:iconTint="@color/main"
+
+        />
+
+    <item
+        android:id="@+id/businessContactsFragment"
+        android:icon="@drawable/ic_work"
+        android:title="@string/business_contacts"
+        android:iconTint="@color/main"/>
+
+    <item
+        android:id="@+id/personalContactFragment"
+        android:icon="@drawable/ic_account_circle"
+        android:title="@string/personal_contacts"
+        android:iconTint="@color/main"/>
+</menu>

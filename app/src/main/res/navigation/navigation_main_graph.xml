@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main_graph"
+    app:startDestination="@id/personalContactFragment">
+
+    <fragment
+        android:id="@+id/businessContactsFragment"
+        android:name="com.example.contactbook.ui.views.business_contacts.BusinessContactsFragment"
+        android:label="@string/business_contacts"
+        tools:layout="@layout/fragment_contacts">
+        <action
+            android:id="@+id/action_contactsFragment_to_addContactFragment"
+            app:destination="@id/addContactFragment" />
+        <action
+            android:id="@+id/action_contactsFragment_to_contactDetailFragment"
+            app:destination="@id/contactDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalContactFragment"
+        android:name="com.example.contactbook.ui.views.personal_contacts.PersonalFragment"
+        android:label="@string/personal_contacts"
+        tools:layout="@layout/fragment_contacts">
+        <action
+            android:id="@+id/action_contactsFragment_to_addContactFragment"
+            app:destination="@id/addContactFragment" />
+        <action
+            android:id="@+id/action_contactsFragment_to_contactDetailFragment"
+            app:destination="@id/contactDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addContactFragment"
+        android:name="com.example.contactbook.ui.views.add.AddContactFragment"
+        android:label="@string/add_contact_fragment"
+        tools:layout="@layout/fragment_add_contact">
+        <action
+            android:id="@+id/action_addContactFragment_to_contactsFragment"
+            app:destination="@id/businessContactsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editContactFragment"
+        android:name="com.example.contactbook.ui.views.edit.EditContactFragment"
+        android:label="@string/edit_contact_fragment"
+        tools:layout="@layout/fragment_edit_contact">
+        <argument
+            android:name="transfer_contact_id"
+            app:argType="string"
+            android:defaultValue='""' />
+        <action
+            android:id="@+id/action_editContactFragment_to_contactDetailFragment"
+            app:destination="@id/contactDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactDetailFragment"
+        android:name="com.example.contactbook.ui.views.detail.ContactDetailFragment"
+        android:label="@string/contact_detail_fragment"
+        tools:layout="@layout/fragment_contact_detail">
+        <action
+            android:id="@+id/action_contactDetailFragment_to_editContactFragment"
+            app:destination="@id/editContactFragment" />
+        <action
+            android:id="@+id/action_contactDetailFragment_to_contactsFragment"
+            app:destination="@id/businessContactsFragment" />
+        <argument
+            android:name="transfer_contact_id"
+            app:argType="string"
+            android:defaultValue="unknown" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/allContactsFragment"
+        android:name="com.example.contactbook.ui.views.all_contacts.AllContactsFragments"
+        android:label="@string/all_contacts"
+        tools:layout="@layout/fragment_contacts">
+        <action
+            android:id="@+id/action_contactsFragment_to_addContactFragment"
+            app:destination="@id/addContactFragment" />
+        <action
+            android:id="@+id/action_contactsFragment_to_contactDetailFragment"
+            app:destination="@id/contactDetailFragment" />
+    </fragment>
+</navigation>
